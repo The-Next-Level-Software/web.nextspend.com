@@ -1,21 +1,36 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Wallet, Twitter, Github, Linkedin, Instagram, ArrowRight, Mail } from 'lucide-react'
+import { Twitter, Linkedin, Instagram, Facebook, Youtube, Music2 } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
 const links = {
-  Product: ['Features', 'Dashboard', 'Pricing', 'Security', 'Changelog'],
-  Company: ['About Us', 'Blog', 'Careers', 'Press', 'Contact'],
-  Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'Refund Policy'],
+  Product: [{ label: 'Features', href: '#features' }, { label: 'Testimonials', href: '#testimonials' }],
+  Company: [
+    { label: 'About Us', href: 'https://thenextlevelsoftware.com/about-us' },
+    { label: 'Blog', href: 'https://thenextlevelsoftware.com/blog' },
+    { label: 'Careers', href: 'https://thenextlevelsoftware.com/careers' },
+    // { label: 'Press', href: 'https://thenextlevelsoftware.com/press' },
+    { label: 'Contact', href: 'https://thenextlevelsoftware.com/contact-us' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    // { label: 'Cookie Policy', href: '#' },
+    // { label: 'Refund Policy', href: '#' },
+  ],
 }
 
 const socials = [
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Github, label: 'GitHub', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
+  { icon: Twitter, label: 'X (Twitter)', href: 'https://x.com/next_level_soft' },
+  { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/company/thenextlevelsoftware' },
+  { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/next_level_software?igsh=OGVocnJoamFqYmwz' },
+  { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/people/Next-Level-Software/61551211781742/' },
+  { icon: Youtube, label: 'YouTube', href: 'https://www.youtube.com/@thenextlevelsoftware' },
+  { icon: Music2, label: 'TikTok', href: 'https://www.tiktok.com/@nextlevelsoftware' },
 ]
 
 export function Footer() {
@@ -62,12 +77,15 @@ export function Footer() {
               whileHover={{ scale: 1.03 }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-md shadow-primary/25">
+              {/* <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center shadow-md shadow-primary/25">
                 <Wallet className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-foreground">
+              </div> */}
+              {/* <span className="text-xl font-bold text-foreground">
                 <span className="text-primary">Next Level</span> Software
-              </span>
+              </span> */}
+              <Link href="/">
+                <Image src="/Next Spend Logo/nlslightlogo.png" alt="NextSpend" width={140} height={40} className="h-10 w-auto" />
+              </Link>
             </motion.div>
 
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
@@ -75,7 +93,7 @@ export function Footer() {
             </p>
 
             {/* Newsletter */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <p className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
                 Stay updated
@@ -101,14 +119,14 @@ export function Footer() {
                     <Button
                       type="submit"
                       size="sm"
-                      className="bg-primary hover:bg-primary/90 text-white px-3 shadow-md shadow-primary/20"
+                      className="cursor-pointer bg-primary hover:bg-primary/90 text-white px-3 shadow-md shadow-primary/20"
                     >
                       <ArrowRight className="w-4 h-4" />
                     </Button>
                   </motion.div>
                 </form>
               )}
-            </div>
+            </div> */}
 
             {/* Socials */}
             <div className="flex gap-2">
@@ -116,6 +134,8 @@ export function Footer() {
                 <motion.a
                   key={i}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:border-primary/20 transition-colors duration-200"
                   whileHover={{ y: -3, scale: 1.05 }}
@@ -146,15 +166,17 @@ export function Footer() {
               <ul className="space-y-2.5">
                 {items.map((item, i) => (
                   <motion.li key={i}>
-                    <a
-                      href="#"
+                    <Link
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1 group"
                     >
                       <motion.span
                         className="w-0 group-hover:w-3 h-px bg-primary transition-all duration-200 inline-block"
                       />
-                      {item}
-                    </a>
+                      {item.label}
+                    </Link>
                   </motion.li>
                 ))}
               </ul>
@@ -173,7 +195,7 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <p>© {new Date().getFullYear()} NextSpend. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Next Level Software. All rights reserved.</p>
 
           <div className="flex items-center gap-1.5">
             <span>Made with</span>
@@ -184,15 +206,13 @@ export function Footer() {
             >
               ♥
             </motion.span>
-            <span>in India</span>
+            <span>in Pakistan</span>
           </div>
 
           <div className="flex items-center gap-4">
-            {['Privacy', 'Terms', 'Cookies'].map((item, i) => (
-              <a key={i} href="#" className="hover:text-primary transition-colors duration-200">
-                {item}
-              </a>
-            ))}
+            <Link href="/privacy" className="hover:text-primary transition-colors duration-200">Privacy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors duration-200">Terms</Link>
+            {/* <Link href="#" className="hover:text-primary transition-colors duration-200">Cookies</Link> */}
           </div>
         </motion.div>
 

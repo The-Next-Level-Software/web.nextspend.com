@@ -169,7 +169,8 @@ export function Hero() {
             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg h-auto font-semibold flex items-center gap-2 shadow-lg shadow-primary/30"
+                className="cursor-pointer bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg h-auto font-semibold flex items-center gap-2 shadow-lg shadow-primary/30"
+                onClick={() => window.open("https://play.google.com/store/apps/details?id=com.nls.nextspend", "_blank")}
               >
                 Get Started Free
                 <motion.span
@@ -180,15 +181,15 @@ export function Hero() {
                 </motion.span>
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+            {/* <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/30 hover:bg-primary/5 hover:border-primary/50 text-foreground px-8 py-3 text-lg h-auto font-semibold"
+                className="cursor-pointer border-primary/30 hover:bg-primary/5 hover:border-primary/50 text-foreground px-8 py-3 text-lg h-auto font-semibold"
               >
                 View Demo
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Trust badges */}

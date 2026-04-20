@@ -114,7 +114,8 @@ export function CTA() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             <Button
               size="lg"
-              className="bg-white hover:bg-white/95 text-primary px-8 h-14 text-lg font-bold rounded-xl shadow-xl shadow-black/20 flex items-center gap-2"
+              className="cursor-pointer bg-white hover:bg-white/95 text-primary px-8 h-14 text-lg font-bold rounded-xl shadow-xl shadow-black/20 flex items-center gap-2"
+              onClick={() => window.open("https://play.google.com/store/apps/details?id=com.nls.nextspend", "_blank")}
             >
               Start Tracking Today
               <motion.span
@@ -125,14 +126,14 @@ export function CTA() {
               </motion.span>
             </Button>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+          {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
             <Button
               size="lg"
-              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 h-14 text-lg font-semibold rounded-xl backdrop-blur-sm"
+              className="cursor-pointer bg-white/10 hover:bg-white/20 border border-white/30 text-white px-8 h-14 text-lg font-semibold rounded-xl backdrop-blur-sm"
             >
               View Demo
             </Button>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Trust badges */}

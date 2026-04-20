@@ -10,6 +10,7 @@ import {
   Bell,
   Users,
   Lock,
+  ArrowRight,
 } from 'lucide-react'
 
 const features = [
@@ -21,6 +22,7 @@ const features = [
     bg: 'bg-blue-50',
     border: 'border-blue-100',
     glow: 'group-hover:shadow-blue-200',
+    iconColor: 'text-blue-500',
   },
   {
     icon: Tag,
@@ -30,6 +32,7 @@ const features = [
     bg: 'bg-violet-50',
     border: 'border-violet-100',
     glow: 'group-hover:shadow-violet-200',
+    iconColor: 'text-violet-500',
   },
   {
     icon: CreditCard,
@@ -39,6 +42,7 @@ const features = [
     bg: 'bg-sky-50',
     border: 'border-sky-100',
     glow: 'group-hover:shadow-sky-200',
+    iconColor: 'text-sky-500',
   },
   {
     icon: TrendingUp,
@@ -48,6 +52,7 @@ const features = [
     bg: 'bg-emerald-50',
     border: 'border-emerald-100',
     glow: 'group-hover:shadow-emerald-200',
+    iconColor: 'text-emerald-500',
   },
   {
     icon: Target,
@@ -57,6 +62,7 @@ const features = [
     bg: 'bg-orange-50',
     border: 'border-orange-100',
     glow: 'group-hover:shadow-orange-200',
+    iconColor: 'text-orange-500',
   },
   {
     icon: Bell,
@@ -66,6 +72,7 @@ const features = [
     bg: 'bg-rose-50',
     border: 'border-rose-100',
     glow: 'group-hover:shadow-rose-200',
+    iconColor: 'text-rose-500',
   },
   {
     icon: Users,
@@ -75,6 +82,7 @@ const features = [
     bg: 'bg-indigo-50',
     border: 'border-indigo-100',
     glow: 'group-hover:shadow-indigo-200',
+    iconColor: 'text-indigo-500',
   },
   {
     icon: Lock,
@@ -84,6 +92,7 @@ const features = [
     bg: 'bg-slate-50',
     border: 'border-slate-100',
     glow: 'group-hover:shadow-slate-200',
+    iconColor: 'text-slate-500',
   },
 ]
 
@@ -139,7 +148,7 @@ export function Features() {
 
         {/* Feature grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {features.map((feature, index) => (
+          {features.map((feature: any, index: number) => (
             <motion.div
               key={index}
               className="group relative"
@@ -169,17 +178,8 @@ export function Features() {
                   whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
                   transition={{ duration: 0.4 }}
                 >
-                  <div className={`bg-gradient-to-br ${feature.color} bg-clip-text`}>
-                    <feature.icon className="w-6 h-6" style={{ color: 'transparent', stroke: 'url(#grad)' }} />
-                  </div>
-                  {/* fallback colored icon */}
-                  <feature.icon className={`w-6 h-6 absolute bg-gradient-to-br ${feature.color} bg-clip-text`} style={{ display: 'none' }} />
+                  <feature.icon className={`w-6 h-6 ${feature.iconColor}`} strokeWidth={1.8} />
                 </motion.div>
-
-                {/* Simpler icon approach */}
-                <div className="hidden">
-                  <feature.icon />
-                </div>
 
                 <h3 className="text-base font-semibold mb-2 text-foreground leading-snug">
                   {feature.title}
@@ -189,18 +189,18 @@ export function Features() {
                 </p>
 
                 {/* Bottom arrow on hover */}
-                <motion.div
-                  className="mt-4 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                {/* <motion.div
+                  className="cursor-pointer mt-4 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                   initial={false}
                 >
-                  <span>Learn more</span>
+                  <span className='cursor-pointer'>Learn more</span>
                   <motion.span
                     animate={{ x: [0, 3, 0] }}
                     transition={{ duration: 1, repeat: Infinity }}
                   >
-                    →
+                    <ArrowRight size={13}></ArrowRight>
                   </motion.span>
-                </motion.div>
+                </motion.div> */}
               </div>
             </motion.div>
           ))}
