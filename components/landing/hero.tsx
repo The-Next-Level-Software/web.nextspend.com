@@ -32,7 +32,7 @@ const floatingCards = [
     icon: TrendingUp,
     label: 'Monthly Savings',
     value: 16780,
-    prefix: '₹',
+    prefix: '$',
     change: '+18%',
     positive: true,
     color: 'from-emerald-400 to-emerald-500',
@@ -145,7 +145,7 @@ export function Hero() {
             Control Every{' '}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-primary via-sky-400 to-blue-600 bg-clip-text text-transparent">
-                Rupee
+                Cents
               </span>
               <motion.span
                 className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"
@@ -254,7 +254,7 @@ export function Hero() {
                 >
                   <p className="text-sm text-muted-foreground mb-1">Total Balance</p>
                   <p className="text-4xl font-bold text-foreground">
-                    ₹<AnimatedCounter target={45230} />
+                    $<AnimatedCounter target={45230} />
                   </p>
                   <p className="text-emerald-500 text-sm font-medium mt-1">↑ +12% from last month</p>
                 </motion.div>
@@ -275,7 +275,7 @@ export function Hero() {
                     >
                       <Icon className={`w-4 h-4 ${color} mb-2`} />
                       <p className="text-xs text-muted-foreground">{label}</p>
-                      <p className={`text-lg font-bold ${color}`}>₹<AnimatedCounter target={value} /></p>
+                      <p className={`text-lg font-bold ${color}`}>$<AnimatedCounter target={value} /></p>
                     </motion.div>
                   ))}
                 </div>

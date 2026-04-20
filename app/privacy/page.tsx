@@ -64,7 +64,8 @@ export default function PrivacyPage() {
         <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
           <Link href="/">
             <motion.div whileHover={{ scale: 1.05 }}>
-              <Image src="/Next Spend Logo/nlslightlogo.png" alt="NextSpend" width={140} height={40} className="h-10 w-auto" />
+              {/* <Image src="/Next Spend Logo/header.png" alt="NextSpend" width={240} height={90} className="h-10 w-auto" /> */}
+              <img src="/Next Spend Logo/header.png" alt="NextSpend" className='h-50 w-auto' />
             </motion.div>
           </Link>
           <Link

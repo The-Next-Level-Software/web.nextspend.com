@@ -23,10 +23,10 @@ const bars = [55, 70, 45, 80, 60, 90, 65, 85, 50, 75, 88, 72]
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
 const transactions = [
-  { name: 'Salary Credit', category: 'Income', amount: '+₹45,000', positive: true, icon: '💼', time: 'Today' },
-  { name: 'Grocery Store', category: 'Food', amount: '-₹2,340', positive: false, icon: '🛒', time: 'Yesterday' },
-  { name: 'Netflix', category: 'Entertainment', amount: '-₹649', positive: false, icon: '🎬', time: '2 days ago' },
-  { name: 'Freelance Work', category: 'Income', amount: '+₹8,500', positive: true, icon: '💻', time: '3 days ago' },
+  { name: 'Salary Credit', category: 'Income', amount: '+$45,000', positive: true, icon: '💼', time: 'Today' },
+  { name: 'Grocery Store', category: 'Food', amount: '-$2,340', positive: false, icon: '🛒', time: 'Yesterday' },
+  { name: 'Netflix', category: 'Entertainment', amount: '-$649', positive: false, icon: '🎬', time: '2 days ago' },
+  { name: 'Freelance Work', category: 'Income', amount: '+$8,500', positive: true, icon: '💻', time: '3 days ago' },
 ]
 
 const donutSegments = [
@@ -129,9 +129,9 @@ export function DashboardPreview() {
             {/* Stat cards row */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
               {[
-                { label: 'Total Balance', value: 45230, prefix: '₹', change: '+12%', positive: true, icon: Wallet, bg: 'bg-primary', light: 'bg-blue-50' },
-                { label: 'Total Income', value: 68500, prefix: '₹', change: '+8%', positive: true, icon: TrendingUp, bg: 'bg-sky-500', light: 'bg-sky-50' },
-                { label: 'Total Expenses', value: 28450, prefix: '₹', change: '-5%', positive: false, icon: TrendingDown, bg: 'bg-blue-400', light: 'bg-blue-50' },
+                { label: 'Total Balance', value: 45230, prefix: '$', change: '+12%', positive: true, icon: Wallet, bg: 'bg-primary', light: 'bg-blue-50' },
+                { label: 'Total Income', value: 68500, prefix: '$', change: '+8%', positive: true, icon: TrendingUp, bg: 'bg-sky-500', light: 'bg-sky-50' },
+                { label: 'Total Expenses', value: 28450, prefix: '$', change: '-5%', positive: false, icon: TrendingDown, bg: 'bg-blue-400', light: 'bg-blue-50' },
               ].map(({ label, value, prefix, change, positive, icon: Icon, bg, light }, i) => (
                 <motion.div
                   key={i}
@@ -231,7 +231,7 @@ export function DashboardPreview() {
                     ))}
                     <circle cx="60" cy="60" r="24" fill="white" />
                     <text x="60" y="56" textAnchor="middle" fontSize="8" fill="#4b7a9e" fontWeight="500">Total</text>
-                    <text x="60" y="68" textAnchor="middle" fontSize="9" fill="#0f172a" fontWeight="700">₹28,450</text>
+                    <text x="60" y="68" textAnchor="middle" fontSize="9" fill="#0f172a" fontWeight="700">$28,450</text>
                   </motion.svg>
                   <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 mt-3 w-full">
                     {donutSegments.map((seg, i) => (

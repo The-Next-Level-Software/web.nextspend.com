@@ -83,9 +83,9 @@ export function Footer() {
               {/* <span className="text-xl font-bold text-foreground">
                 <span className="text-primary">Next Level</span> Software
               </span> */}
-              <Link href="/">
+              <a href="https://www.thenextlevelsoftware.com" target='_blank' rel="noopener noreferrer">
                 <Image src="/Next Spend Logo/nlslightlogo.png" alt="NextSpend" width={140} height={40} className="h-10 w-auto" />
-              </Link>
+              </a>
             </motion.div>
 
             <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">

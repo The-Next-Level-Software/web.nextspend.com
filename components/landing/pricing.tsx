@@ -163,11 +163,10 @@ export function Pricing() {
                   </motion.div>
                 )}
 
-                <div className={`rounded-2xl border-2 overflow-hidden h-full flex flex-col ${
-                  plan.popular
+                <div className={`rounded-2xl border-2 overflow-hidden h-full flex flex-col ${plan.popular
                     ? 'border-primary shadow-2xl shadow-primary/20 bg-white'
                     : `${plan.border} shadow-sm bg-white`
-                }`}>
+                  }`}>
 
                   {/* Card top accent */}
                   <div className={`h-1.5 bg-gradient-to-r ${plan.color}`} />
@@ -200,7 +199,7 @@ export function Pricing() {
                             <span className="text-4xl font-bold text-foreground">Free</span>
                           ) : (
                             <>
-                              <span className="text-4xl font-bold text-foreground">₹{price}</span>
+                              <span className="text-4xl font-bold text-foreground">${price}</span>
                               <span className="text-muted-foreground text-sm mb-1">/month</span>
                             </>
                           )}
@@ -212,7 +211,7 @@ export function Pricing() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                         >
-                          Billed ₹{price * 12}/year · Save ₹{(plan.monthlyPrice - price) * 12}
+                          Billed ${price * 12}/year · Save ${(plan.monthlyPrice - price) * 12}
                         </motion.p>
                       )}
                     </div>
@@ -220,11 +219,10 @@ export function Pricing() {
                     {/* CTA */}
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="mb-7">
                       <Button
-                        className={`w-full font-semibold h-11 ${
-                          plan.popular
+                        className={`w-full font-semibold h-11 ${plan.popular
                             ? 'bg-gradient-to-r from-primary to-blue-600 hover:opacity-90 text-white shadow-lg shadow-primary/30'
                             : 'border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/5 text-foreground bg-transparent'
-                        }`}
+                          }`}
                         variant={plan.popular ? 'default' : 'outline'}
                       >
                         {price === 0 ? 'Get Started Free' : 'Start Free Trial'}

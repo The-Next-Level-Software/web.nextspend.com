@@ -216,7 +216,7 @@ export function Features() {
         >
           {[
             { value: '50K+', label: 'Active Users' },
-            { value: '₹2Cr+', label: 'Tracked Monthly' },
+            { value: '$2Cr+', label: 'Tracked Monthly' },
             { value: '99.9%', label: 'Uptime' },
             { value: '4.9★', label: 'User Rating' },
           ].map(({ value, label }, i) => (
