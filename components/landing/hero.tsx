@@ -145,7 +145,7 @@ export function Hero() {
             Control Every{' '}
             <span className="relative inline-block">
               <span className="bg-gradient-to-r from-primary via-sky-400 to-blue-600 bg-clip-text text-transparent">
-                Cents
+                Dollar
               </span>
               <motion.span
                 className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full"
